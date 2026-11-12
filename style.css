@@ -1,0 +1,300 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.encabezado h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.encabezado p {
+    color: #777;
+    font-size: 14px;
+}
+
+.btn-agregar {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #222;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-agregar:hover {
+    background: #555;
+    transform: scale(1.08);
+}
+
+/* CONTENEDOR DE CARRILES */
+
+.contenedor-carriles {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    overflow-x: auto;
+    min-height: calc(100vh - 90px);
+}
+
+/* CARRIL */
+
+.carril {
+    flex: 0 0 280px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.carril-encabezado {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+.carril-encabezado h2 {
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+/* MENU DE CADA CARRIL */
+
+.menu-contenedor {
+    position: relative;
+}
+
+.btn-menu {
+    border: none;
+    background: transparent;
+    font-size: 23px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.menu-opciones {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 130px;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.menu-opciones button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-opciones button:hover {
+    background: #f0f0f0;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* INFORMACION DE CADA POKEMON */
+
+.lista-pokemon {
+    padding: 10px;
+}
+
+.tarjeta-pokemon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.tarjeta-pokemon:hover {
+    background: #f7f7f7;
+}
+
+.tarjeta-pokemon img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background: #f3f3f3;
+    border-radius: 8px;
+}
+
+.info-pokemon {
+    flex: 1;
+    min-width: 0;
+}
+
+.info-pokemon h3 {
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+
+.info-pokemon p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 3px;
+}
+
+/* ESTADOS */
+
+.estado {
+    padding: 20px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+.estado.error {
+    color: #d93025;
+}
+
+.estado.cargando {
+    color: #3976c5;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.modal-contenido {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.modal-contenido h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.modal-contenido p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+#nombreTipo {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+#nombreTipo:focus {
+    border-color: #3976c5;
+}
+
+.btn-confirmar {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-confirmar:hover {
+    background: #444;
+}
+
+.mensaje-modal {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.mensaje-modal.error {
+    color: #d93025;
+}
+
+.mensaje-modal.exito {
+    color: #168447;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .encabezado {
+        padding: 15px;
+    }
+
+    .encabezado h1 {
+        font-size: 20px;
+    }
+
+    .contenedor-carriles {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .carril {
+        flex-basis: 260px;
+    }
+}

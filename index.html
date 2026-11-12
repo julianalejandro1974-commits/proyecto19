@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div>
+            <h1>Pokémon Explorer</h1>
+            <p>Explora Pokémon por sus diferentes tipos</p>
+        </div>
+
+        <button id="btnAgregar" class="btn-agregar">
+            +
+        </button>
+    </header>
+
+    <main>
+        <section id="contenedorCarriles" class="contenedor-carriles">
+            <!-- Los carriles se crean desde JavaScript -->
+        </section>
+    </main>
+
+    <!-- Ventana para agregar un carril -->
+    <div id="modalAgregar" class="modal oculto">
+        <div class="modal-contenido">
+
+            <button id="btnCerrar" class="btn-cerrar">
+                &times;
+            </button>
+
+            <h2>Agregar tipo de Pokémon</h2>
+
+            <p>
+                Escribe el nombre del tipo que deseas explorar.
+            </p>
+
+            <form id="formAgregar">
+                <input type="text" id="nombreTipo" placeholder="Ejemplo: fire, water, grass..." autocomplete="off"
+                    required>
+
+                <button type="submit" class="btn-confirmar">
+                    Agregar carril
+                </button>
+            </form>
+
+            <p id="mensajeModal" class="mensaje-modal"></p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
